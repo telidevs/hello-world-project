@@ -1,0 +1,130 @@
+/* First of all we will define our css variables  */
+
+:root{
+    --bg: #f3f1fb; 
+    --surface : #ffffff;
+    --text : #1b1740;
+    --muted: #5f5a85;
+    --accent: #4b3df2;
+    --accent-text : #ffffff;
+    --ring: #ffb703;
+}
+
+/* As we have planned dark mood when a device use dark mood it automatlly change into dark  */
+
+@media(prefers-color-scheme: dark){
+    :root{
+        --bg:      #12102b;
+        --surface: #1c1941;
+        --text:    #efedff;
+        --muted:   #a9a4d6;
+        --accent:  #a79bff;
+        --accent-text: #12102b;
+    }
+}
+
+/* So these are css variables now let's style our website  */
+
+/* First Universel Selector */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Let's style page layout  */
+
+html,body{
+    height: 100%;
+}
+body{
+    font-family: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif ;
+    background: var(--bg);
+    color: var(--text);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+
+}
+
+/* Card  */
+
+.card{
+    width: 100%;
+    max-width: 640px;
+    background: var(--surface);
+    border-radius: 28px;
+    padding: clamp(1.75rem,6vw,3.5rem); /* This will grow with screen within limit */
+
+}
+
+
+/* Greeting  */
+
+.greeting{
+    font-size: clamp(3.5rem,15vw,7.5rem);
+    font-weight: 800;
+    line-height: .95;
+    letter-spacing: -.03;
+    color: var(--accent);
+    min-height: 1em;
+    transition: opacity .25 ease, transform .25s ease;
+}
+
+.greeting.is-changing{
+    opacity: 0;
+    transform: translateY(10px);
+}
+.target{
+    font-size: clamp(2rem,8vw,3.5rem);
+    font-weight: 500;
+    margin-top: 0.4rem;
+    overflow-wrap: anywhere; 
+}
+.caption{
+    color: var(--muted);
+    margin-top: 1rem;
+    font-size: 1.05rem;
+}
+
+/* Form controls */
+
+.controls{
+    display: flex;
+    flex-direction: column;
+    gap:.9rem;
+    margin-top: 2rem;
+}
+
+input,button{
+    font: inherit;  /* Use page font instead of browser default */
+    font-size: 1.05.rem;
+    border-radius: 14px;
+    padding: 0.95rem 1.2rem;
+}
+input{
+    border: 2px solid var(--muted);
+    background: transparent;
+    color: var(--text);
+    text-align: center;
+}
+button{
+    border: 2px solid var(--muted);
+    background: var(--accent);
+    color: var(--accent-text);
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+button:active{
+    transform: scale(0.97);
+}
+input:focus-visible,button:focus-visible{
+    outline: 3px solid var(--ring);
+    outline-offset: 3px;
+}
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<!-- 
+
+100 DAYS OF HTML,CSS AD JAVASCRIPT
+DAY 01: HELLO WORLD PAGE
+
+
+What you will learn :
+
+1-> HTML: page structure (head,body,sementic tags)
+2-> CSS : variables,flexbox,responsive text,dark mode
+3-> JavaScript: selecting elements, events,arrays,changing text.
+
+
+
+LET'S GET STARTED: 😊
+-->
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 01 : Hello World Project</title>
+    <!-- Load a Google Font. The fallback fonts are set in the CSS below -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  
+    <!-- Main Contet  -->
+
+    <main class="card">
+        <h1 class="greeting" id="greeting">Hello</h1>
+        <p class="target" id="target">World!</p>
+        <p class="caption" id="caption">English. tap the button to hear it in another language</p>
+        <div class="controls">
+            <input type="text" id="nameInput" placeholder="Type your name" maxlength="24" autocomplete="off" aria-label="Your name">
+
+            <!-- Button that will change greeting language  -->
+             <button type="button" id="langBtn">say hello in another language</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
